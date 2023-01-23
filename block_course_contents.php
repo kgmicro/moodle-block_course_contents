@@ -218,6 +218,33 @@ class block_course_contents extends block_base {
                 $text .= html_writer::end_tag('li');
             }
 
+            // Check if we want to hide section 0.  Checked forced status from global config first,
+            // then check block instance settings.
+            if ($globalconfig->hide_section_0 === 'forced_off') {
+                $hidesection0 = false;
+
+            } else if ($globalconfig->hide_section_0 === 'forced_on') {
+                $hidesection0 = true;
+
+            } else if (empty($this->config) or !isset($this->config->hide_section_0)) {
+                // Instance not configured, use the globally defined default value.
+                if ($globalconfig->hide_section_0 === 'optional_on') {
+                    $hidesection0 = true;
+                } else {
+                    $hidesection0 = false;
+                }
+            } else if (!empty($this->config->hide_section_0)) {
+                $hidesection0 = true;
+
+            } else {
+                $hidesection0 = false;
+
+            }
+
+            if (($i == 0) && ($hidesection0)) {
+                continue;
+            }
+
             $sectionclass = 'section-item list-group-item';
             $numberclass = 'badge badge-secondary';
 

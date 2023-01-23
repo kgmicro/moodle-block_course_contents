@@ -53,6 +53,15 @@ $string['config_enumerate_section_0_desc'] = 'This setting controls the enumerat
 $string['config_enumerate_section_0_help'] = 'Setting this option will enumerate from the first section, usually known as section 0 or general section.';
 $string['config_enumerate_section_0_label'] = 'Start enumerating from the general section.';
 
+$string['config_hide_section_0'] = 'Hide general section';
+$string['config_hide_section_0_desc'] = 'This setting controls whether to display a link for the general section, also known as section 0.';
+$string['config_hide_section_0_help'] = 'Setting this option will hide the link for the first section, usually known as section 0 or general section.';
+$string['config_hide_section_0_forced_off'] = 'Disabled in all blocks';
+$string['config_hide_section_0_forced_on'] = 'Enabled in all blocks';
+$string['config_hide_section_0_optional_off'] = 'Optional, disabled by default';
+$string['config_hide_section_0_optional_on'] = 'Optional, enabled by default';
+$string['config_hide_section_0_label'] = 'Do not show the general section link.';
+
 $string['config_display_course_link'] = 'Course page link';
 $string['config_display_course_link_desc'] = 'Display course home page link at the top of all sections.';
 $string['config_display_course_link_forced_off'] = 'Disabled in all blocks';

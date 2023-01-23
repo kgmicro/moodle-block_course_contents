@@ -49,6 +49,22 @@ if ($ADMIN->fulltree) {
             $enumerate
             ));
 
+    // Hide section 0.
+    $hidesection0 = [
+        'forced_on' => get_string('config_enumerate_forced_on', 'block_course_contents'),
+        'optional_on' => get_string('config_enumerate_optional_on', 'block_course_contents'),
+        'optional_off' => get_string('config_enumerate_optional_off', 'block_course_contents'),
+        'forced_off' => get_string('config_enumerate_forced_off', 'block_course_contents'),
+    ];
+
+    $settings->add(new admin_setting_configselect(
+            'block_course_contents/hide_section_0',
+            get_string('config_hide_section_0', 'block_course_contents'),
+            get_string('config_hide_section_0_desc', 'block_course_contents'),
+            'optional_off',
+            $hidesection0
+            ));
+
     // Display course page link.
     $displaycourselink = [
             'forced_on' => get_string('config_display_course_link_forced_on', 'block_course_contents'),
